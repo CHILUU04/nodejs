@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="/">Home</a>
+        <a href="/create">Create user</a>
+    </div>
+    
+       <div class="table-container">
+        <!-- <%= JSON.stringify(listUsers)%> convert tu object qua -->
+        <table class="my-table">
+            <thead class="my-table__head">
+                <tr class="my-table__row">
+                    <th class="my-table__cell my-table__cell--header">id</th>
+                    <th class="my-table__cell my-table__cell--header">Email</th>
+                    <th class="my-table__cell my-table__cell--header">Name</th>
+                    <th class="my-table__cell my-table__cell--header">City</th>
+                    <th class="my-table__cell my-table__cell--header">Action</th>
+                </tr>
+            </thead>
+            <tbody class="my-table__body">
+                <% listUsers.forEach(function(user) { %> 
+                    <tr class="my-table__row">
+                        <td class="my-table__cell">
+                            <%= user.id %>
+                        </td>
+                        <td class="my-table__cell">
+                            <%= user.email %>
+                        </td>
+                        <td class="my-table__cell">
+                            <%= user.name %>
+                        </td>
+                        <td class="my-table__cell">
+                            <%= user.city %>
+                        </td>
+
+                        <td class="my-table__cell my-table__cell--action">
+                            <button class="edit">Edit</button>
+                            <button class="delete">Delete</button>
+                        </td>
+                    </tr>
+                    <% });
+                 %>
+             </tbody>
+
+        </table>
+  </div>
+
+</body>
+</html>
