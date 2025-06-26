@@ -3,22 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Form login</title>
 </head>
 <body>
-    <h4>Form login</h4>
-     <a href="/">trang chủ</a>
-    <form action="/loginUser" method="post">
+        <h1>Đăng nhập </h1>
         <div>
-            <lable>user</lable>
-            <input type="text" name="name">
+            <form action="/login" method="post">
+                <div>
+                    <label for="">name</label>
+                    <input type="text" name = 'userName'> <br>
+                </div>
+                <div>
+                    <label for="">password</label>
+                    <input type="text" name = 'password'> <br>
+                </div>
+                
+                <button>submit</button>
+            </form>
         </div>
-        <div>
-            <lable>pass</lable>
-            <input type="text" name="pass">
-        </div>
-            <button>Đăng nhập</button>
-
-    </form>
+        <% if (error) { %>
+           <p style="color:red;"><%= error %></p>
+        <% } %>
 </body>
 </html>
